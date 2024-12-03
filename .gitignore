@@ -1,3 +1,8 @@
+geolite2_data/
+GeoLite2-Country.zip
+blocked_ipv6_edl.txt
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
