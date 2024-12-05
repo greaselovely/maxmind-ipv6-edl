@@ -23,7 +23,7 @@ pip install -r requirements.txt
 ## Setup
 1. **MaxMind License Key**: You need a license key from MaxMind to download the GeoLite2 Country database. Update the `LICENSE_KEY` constant in the script with your MaxMind license key.
 
-2. **Blocked Countries**: Update the `BLOCKED_COUNTRIES` list with the ISO codes of countries you want to block. By default, the list includes Iceland (`IS`).
+2. **Blocked Countries**: Update the `BLOCKED_COUNTRIES` list with the ISO codes of countries you want to block.
 
 ## Usage
 1. Clone the repository or download the script.

@@ -4,7 +4,7 @@ import os, sys
 import requests
 import netaddr
 
-BLOCKED_COUNTRIES = ['IS']  # Replace with your list of country ISO codes
+BLOCKED_COUNTRIES = ['VA', 'MC']  # Replace with your list of country ISO codes
 
 LICENSE_KEY = '<YOUR_LICENSE_KEY>'
 # find your account ID and use the following URL with your account id replaced
@@ -15,8 +15,8 @@ ZIP_FILE = 'GeoLite2-Country.zip'
 EXTRACT_FOLDER = 'geolite2_data'
 OUTPUT_FILE = 'blocked_ipv6_edl.txt'
 
-def check_zip_file(zip_file):
-    return os.path.exists(zip_file)
+def check_zip_file(file):
+    return os.path.exists(file)
 
 def download_geolite2_database():
     """
@@ -112,6 +112,7 @@ def main():
         print("\n\nUpdate your license key from MaxMind and re-run\n\tFind your account ID and use the following URL with your account id replaced\n\thttps://www.maxmind.com/en/accounts/your_account_id/license-key/create\n\n")
         sys.exit(0)
     if not check_zip_file(ZIP_FILE):
+        print("Downloading...")
         download_geolite2_database()
     extract_database()
     country_mapping = get_geoname_country_mapping()
