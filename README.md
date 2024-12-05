@@ -44,9 +44,14 @@ pip install -r requirements.txt
 ## Example Output
 The output file (`blocked_ipv6_edl.txt`) will look like this:
 ```
-2400:cc40::/29 - IS
-2400:cda0::/32 - IS
-2001:db8::/30 - IS
+2a01:b8::/32 - VA
+2a04:640::/29 - VA
+2a07:8100::/29 - VA
+2a01:8fe0::/32 - MC
+2a06:92c0::/32 - MC
+2a07:9080::/29 - MC
+2a0b:8000::/29 - MC
+2a0f:b980::/29 - MC
 ```
 This format includes the IPv6 block along with the corresponding country code.
 
