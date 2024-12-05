@@ -15,6 +15,9 @@ ZIP_FILE = 'GeoLite2-Country.zip'
 EXTRACT_FOLDER = 'geolite2_data'
 OUTPUT_FILE = 'blocked_ipv6_edl.txt'
 
+def check_zip_file(zip_file):
+    return os.path.exists(zip_file)
+
 def download_geolite2_database():
     """
     Downloads the GeoLite2 CSV database from MaxMind using the provided license key.
@@ -108,7 +111,8 @@ def main():
     if LICENSE_KEY == '<YOUR_LICENSE_KEY>':
         print("\n\nUpdate your license key from MaxMind and re-run\n\tFind your account ID and use the following URL with your account id replaced\n\thttps://www.maxmind.com/en/accounts/your_account_id/license-key/create\n\n")
         sys.exit(0)
-    download_geolite2_database()
+    if not check_zip_file(ZIP_FILE):
+        download_geolite2_database()
     extract_database()
     country_mapping = get_geoname_country_mapping()
     ipv6_blocks = extract_ipv6_blocks(country_mapping)
