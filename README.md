@@ -53,6 +53,7 @@ This format includes the IPv6 block along with the corresponding country code.
 ## Notes
 - Make sure to replace `<YOUR_LICENSE_KEY>` in the script with your actual MaxMind license key.
 - This script is for educational and security purposes. It allows you to block IPv6 traffic from countries deemed risky or unwanted.
+- This script checks to see if there is a ZIP file already downloaded, and uses it.  If you want to download everytime, uncomment `delete_file(ZIP_FILE)` in main().
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.

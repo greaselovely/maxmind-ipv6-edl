@@ -18,6 +18,10 @@ OUTPUT_FILE = 'blocked_ipv6_edl.txt'
 def check_zip_file(file):
     return os.path.exists(file)
 
+def delete_file(file):
+    if os.path.exists(file):
+        os.remove(file)
+
 def download_geolite2_database():
     """
     Downloads the GeoLite2 CSV database from MaxMind using the provided license key.
@@ -118,6 +122,8 @@ def main():
     country_mapping = get_geoname_country_mapping()
     ipv6_blocks = extract_ipv6_blocks(country_mapping)
     write_edl_file(ipv6_blocks)
+
+    # delete_file(ZIP_FILE)
 
 if __name__ == '__main__':
     main()
